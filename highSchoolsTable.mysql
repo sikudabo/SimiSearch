@@ -1,0 +1,9 @@
+CREATE TABLE highSchools(
+	
+	school VARCHAR(255),
+    
+	abstract LONGTEXT NOT NULL,
+    
+	INDEX(school),
+    
+	PRIMARY KEY(school)) ENGINE myISAM;
