@@ -1,0 +1,19 @@
+prefix dbpedia-owl: <http://dbpedia.org/ontology/>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?label ?abstract 
+WHERE{
+       ?school rdfs:label ?label .
+       ?school dbpedia-owl:abstract ?abstract .
+       ?school a dbpedia-owl:School .
+       FILTER(lang(?label) = 'en')
+
+       FILTER(lang(?abstract) = 'en')
+
+}
+
+ORDER BY ?label
+
+offset 0
+
+Limit 1000
